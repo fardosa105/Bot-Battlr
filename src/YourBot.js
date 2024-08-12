@@ -1,9 +1,15 @@
-import React from 'react'
+import React from 'react';
+import Bot from './Bot';
 
-function YourBot() {
+const YourBot = ({ army, onRelease, onDischarge }) => {
   return (
-    <div>YourBot</div>
-  )
-}
+    <div className="your-bot-army">
+      <h2>BOT ARMY ...</h2>
+      {army.map((bot) => (
+        <Bot key={bot.id} bot={bot} onRelease={onRelease} onDischarge={onDischarge} />
+      ))}
+    </div>
+  );
+};
 
-export default Y
+export default YourBot;
