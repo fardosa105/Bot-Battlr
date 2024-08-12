@@ -1,9 +1,14 @@
-import React from 'react'
+import React from 'react';
+import Bot from './Bot';
 
-function Collection() {
+const Collection = ({ bots, onEnlist, onClick }) => {
   return (
-    <div>Collection</div>
-  )
-}
+    <div className="bot-collection">
+      {bots.map((bot) => (
+        <Bot key={bot.id} bot={bot} onEnlist={onEnlist} onClick={() => onClick(bot)} />
+      ))}
+    </div>
+  );
+};
 
-export default Collection
+export default Collection;
